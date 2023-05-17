@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   env: {
-    PUBLIC_URL: "http://localhost:3001"
+    PUBLIC_URL: "http://localhost:3001/"
   },
 
   images: {
