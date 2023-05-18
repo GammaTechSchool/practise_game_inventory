@@ -7,7 +7,7 @@ const rawItems = {
     {
       name: "Tree Branch",
       category: "weapon",
-      icon: window.location.hostname + "/items/weapons/BotW_Tree_Branch_Icon.png",
+      icon: "https://practise-game-inventory.vercel.app/items/weapons/BotW_Tree_Branch_Icon.png",
       value: "2",
       stats: { damage: 6 },
       isNew: true,
@@ -17,7 +17,7 @@ const rawItems = {
     {
       name: "Ancient Short Sword",
       category: "weapon",
-      icon: window.location.hostname + "/items/weapons/BotW_Ancient_Short_Sword_Icon.png",
+      icon: "https://practise-game-inventory.vercel.app/items/weapons/BotW_Ancient_Short_Sword_Icon.png",
       value: "40",
       stats: { damage: 24 },
       description:
@@ -26,7 +26,7 @@ const rawItems = {
     {
       name: "Dragonbone Boko Club",
       category: "weapon",
-      icon: window.location.hostname + "/items/weapons/BotW_Dragonbone_Boko_Club_Icon.png",
+      icon: "https://practise-game-inventory.vercel.app/items/weapons/BotW_Dragonbone_Boko_Club_Icon.png",
       value: "24",
       stats: { damage: 20 },
       isNew: true,
@@ -36,7 +36,7 @@ const rawItems = {
     {
       name: "Feathered Edge",
       category: "weapon",
-      icon: window.location.hostname + "/items/weapons/BotW_Feathered_Edge_Icon.png",
+      icon: "https://practise-game-inventory.vercel.app/items/weapons/BotW_Feathered_Edge_Icon.png",
       value: "15",
       stats: { damage: 16 },
       description:
@@ -45,7 +45,7 @@ const rawItems = {
     {
       name: "Flameblade",
       category: "weapon",
-      icon: window.location.hostname + "/items/weapons/BotW_Flameblade_Icon.png",
+      icon: "https://practise-game-inventory.vercel.app/items/weapons/BotW_Flameblade_Icon.png",
       value: "24",
       stats: { damage: 26 },
       description:
@@ -55,7 +55,7 @@ const rawItems = {
       name: "Soldier's Broadsword",
       category: "weapon",
       isNew: true,
-      icon: window.location.hostname + "/items/weapons/BotW_Soldier's_Broadsword_Icon.png",
+      icon: "https://practise-game-inventory.vercel.app/items/weapons/BotW_Soldier's_Broadsword_Icon.png",
       value: "14",
       stats: { damage: 14 },
       description:
@@ -64,7 +64,7 @@ const rawItems = {
     {
       name: "Royal Claymore",
       category: "weapon",
-      icon: window.location.hostname + "/items/weapons/BotW_Royal_Claymore_Icon.png",
+      icon: "https://practise-game-inventory.vercel.app/items/weapons/BotW_Royal_Claymore_Icon.png",
       value: "52",
       stats: { damage: 32 },
       description:
@@ -73,7 +73,7 @@ const rawItems = {
     {
       name: "Master Sword",
       category: "weapon",
-      icon: window.location.hostname + "/items/weapons/BotW_Master_Sword_Icon.png",
+      icon: "https://practise-game-inventory.vercel.app/items/weapons/BotW_Master_Sword_Icon.png",
       value: "30",
       stats: { damage: 28 },
       description:
@@ -84,7 +84,7 @@ const rawItems = {
     {
       name: "Wooden Shield",
       category: "shield",
-      icon: window.location.hostname + "/items/shields/BotW_Wooden_Shield_Icon.png",
+      icon: "https://practise-game-inventory.vercel.app/items/shields/BotW_Wooden_Shield_Icon.png",
       value: "2",
       stats: { defense: 5 },
       description:
@@ -93,7 +93,7 @@ const rawItems = {
     {
       name: "BotW Traveler's Shield",
       category: "shield",
-      icon: window.location.hostname + "/items/shields/BotW_Traveler's_Shield_Icon.png",
+      icon: "https://practise-game-inventory.vercel.app/items/shields/BotW_Traveler's_Shield_Icon.png",
       value: "4",
       stats: { defense: 7 },
       description:
@@ -103,7 +103,7 @@ const rawItems = {
       name: "BotW Gerudo Shield",
       category: "shield",
       isNew: true,
-      icon: window.location.hostname + "/items/shields/BotW_Gerudo_Shield_Icon.png",
+      icon: "https://practise-game-inventory.vercel.app/items/shields/BotW_Gerudo_Shield_Icon.png",
       value: "20",
       stats: { defense: 12 },
       description:
@@ -112,7 +112,7 @@ const rawItems = {
     {
       name: "BotW Ancient Shield",
       category: "shield",
-      icon: window.location.hostname + "/items/shields/BotW_Ancient_Shield_Icon.png",
+      icon: "https://practise-game-inventory.vercel.app/items/shields/BotW_Ancient_Shield_Icon.png",
       value: "70",
       stats: { defense: 25 },
       description:
@@ -123,7 +123,7 @@ const rawItems = {
     {
       name: "Zora Helm",
       category: "helm",
-      icon: window.location.hostname + "/items/armors/BotW_Zora_Helm_Icon.png",
+      icon: "https://practise-game-inventory.vercel.app/items/armors/BotW_Zora_Helm_Icon.png",
       value: "3",
       stats: { armor: 5 },
       bonus: "swimming",
@@ -133,7 +133,7 @@ const rawItems = {
     {
       name: "Zora Armor",
       category: "armor",
-      icon: window.location.hostname + "/items/armors/BotW_Zora_Armor_Icon.png",
+      icon: "https://practise-game-inventory.vercel.app/items/armors/BotW_Zora_Armor_Icon.png",
       value: "3",
       stats: { armor: 7 },
       bonus: "swimming",
@@ -143,7 +143,7 @@ const rawItems = {
     {
       name: "Zora Greaves",
       category: "greave",
-      icon: window.location.hostname + "/items/armors/BotW_Zora_Greaves_Icon.png",
+      icon: "https://practise-game-inventory.vercel.app/items/armors/BotW_Zora_Greaves_Icon.png",
       value: "3",
       stats: { armor: 8 },
       bonus: "swimming",
@@ -153,7 +153,7 @@ const rawItems = {
     {
       name: "Climber's Bandanna",
       category: "helm",
-      icon: window.location.hostname + "/items/armors/BotW_Climber's_Bandanna_Icon.png",
+      icon: "https://practise-game-inventory.vercel.app/items/armors/BotW_Climber's_Bandanna_Icon.png",
       value: "3",
       stats: { armor: 4 },
       bonus: "climbing",
@@ -163,7 +163,7 @@ const rawItems = {
     {
       name: "Climbing Gear",
       category: "armor",
-      icon: window.location.hostname + "/items/armors/BotW_Climbing_Gear_Icon.png",
+      icon: "https://practise-game-inventory.vercel.app/items/armors/BotW_Climbing_Gear_Icon.png",
       value: "3",
       stats: { armor: 9 },
       bonus: "climbing",
@@ -173,7 +173,7 @@ const rawItems = {
     {
       name: "Climbing Boots",
       category: "greave",
-      icon: window.location.hostname + "/items/armors/BotW_Climbing_Boots_Icon.png",
+      icon: "https://practise-game-inventory.vercel.app/items/armors/BotW_Climbing_Boots_Icon.png",
       value: "3",
       stats: { armor: 3 },
       bonus: "climbing",
@@ -184,7 +184,7 @@ const rawItems = {
       name: "Flamebreaker Helm",
       category: "helm",
       icon:
-        window.location.hostname + "/items/armors/BotW_Flamebreaker_Helm_Icon.png",
+        "https://practise-game-inventory.vercel.app/items/armors/BotW_Flamebreaker_Helm_Icon.png",
       value: "3",
       stats: { armor: 12 },
       bonus: "fire",
@@ -194,7 +194,7 @@ const rawItems = {
     {
       name: "Flamebreaker Armor",
       category: "armor",
-      icon: window.location.hostname + "/items/armors/BotW_Flamebreaker_Armor_Icon.png",
+      icon: "https://practise-game-inventory.vercel.app/items/armors/BotW_Flamebreaker_Armor_Icon.png",
       value: "3",
       stats: { armor: 18 },
       bonus: "fire",
@@ -204,7 +204,7 @@ const rawItems = {
     {
       name: "Flamebreaker Boots",
       category: "greave",
-      icon: window.location.hostname + "/items/armors/BotW_Flamebreaker_Boots_Icon.png",
+      icon: "https://practise-game-inventory.vercel.app/items/armors/BotW_Flamebreaker_Boots_Icon.png",
       value: "3",
       stats: { armor: 15 },
       bonus: "fire",
@@ -214,7 +214,7 @@ const rawItems = {
     {
       name: "Cap of the Hero",
       category: "helm",
-      icon: window.location.hostname + "/items/armors/BotW_Cap_of_the_Hero_Icon.png",
+      icon: "https://practise-game-inventory.vercel.app/items/armors/BotW_Cap_of_the_Hero_Icon.png",
       value: "3",
       stats: { armor: 18 },
       bonus: "normal",
@@ -225,7 +225,7 @@ const rawItems = {
       name: "Champion's Tunic",
       category: "armor",
       isNew: true,
-      icon: window.location.hostname + "/items/armors/BotW_Champion's_Tunic_Icon.png",
+      icon: "https://practise-game-inventory.vercel.app/items/armors/BotW_Champion's_Tunic_Icon.png",
       value: "5",
       stats: { armor: 22 },
       bonus: "normal",
@@ -236,7 +236,7 @@ const rawItems = {
       name: "Hylian Trousers",
       category: "greave",
       isNew: true,
-      icon: window.location.hostname + "/items/armors/BotW_Hylian_Trousers_Icon.png",
+      icon: "https://practise-game-inventory.vercel.app/items/armors/BotW_Hylian_Trousers_Icon.png",
       value: "3",
       stats: { armor: 14 },
       bonus: "normal",
