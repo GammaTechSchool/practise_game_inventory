@@ -123,7 +123,7 @@ const rawItems = {
     {
       name: "Zora Helm",
       category: "helm",
-      icon: "https://practise-game-inventory.vercel.app/assets/items/armors/BotW_Zora_Helm_Icon.png",
+      icon: "https://practise-game-inventory.vercel.app/items/armors/BotW_Zora_Helm_Icon.png",
       value: "3",
       stats: { armor: 5 },
       bonus: "swimming",
