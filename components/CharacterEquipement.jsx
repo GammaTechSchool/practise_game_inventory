@@ -7,7 +7,7 @@ export default function CharacterEquipement() {
     const { equippedItems, setEquippedItems } = useContext(InventoryContext);
 
     return (
-        <div className='w-full'>
+        <div className='w-full max-w-[300px]'>
             <div className='grid grid-cols-3 grid-rows-3 gap-y-8'>
                 <div></div>
                 <div className='w-16 h-16 bg-slate-800 border border-slate-600'>
