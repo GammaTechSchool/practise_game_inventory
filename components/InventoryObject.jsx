@@ -1,5 +1,4 @@
 import Image from "next/image"
-import { useEffect, useState } from "react";
 
 export default function InventoryObject({ data, setDescription, equippedItems, setEquippedItems }) {
 
@@ -20,31 +19,30 @@ export default function InventoryObject({ data, setDescription, equippedItems, s
     });
 
     setDescription(prev => {
-      if (prev.name === data.name) {
+      if (equippedItems[data.category]?.name === data.name) {
         return {}
       } else {
         return {
           name: data.name,
           description: data.description,
-          stats: data.stats
+          stats: {
+            type: Object.keys(data.stats)[0],
+            value: data.stats[Object.keys(data.stats)[0]]
+          }
         }
       }
     });
   }
 
   return (
-    <div className={`w-[100px] h-[100px] flex justify-center items-center border ${equippedItems[data.category]?.name === data.name ? "border-red-500" : "border-slate-500"} cursor-pointer`} onClick={handleClick}>
-      {
-        data.category === "elixir" ?
-          <img src={data.icon} alt="" className="h-[90%]" />
-          :
-          <Image
-            src={data.icon}
-            width={100}
-            height={100}
-            alt="Alt"
-          />
-      }
+    <div className={`relative w-[100px] h-[100px] flex justify-center items-center border ${equippedItems[data.category]?.name === data.name ? "border-[rgba(255, 255, 255, 0.5)] shadow-selected" : "border-slate-500"} cursor-pointer`} onClick={handleClick}>
+
+      <Image
+        src={data.icon}
+        width={100}
+        height={100}
+        alt="Alt"
+      />
 
     </div>
   )

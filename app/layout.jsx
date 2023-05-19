@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
       <body className='w-full min-h-screen py-4 px-8 bg-slate-700 text-gray-100'>
         
         <InventoryContextProvider>
-          <header className='w-full flex flex-col justify-center items-center gap-16'>
+          <header className='w-full flex flex-col justify-center items-center gap-10'>
             <h1 className='text-3xl font-bold'>Game Inventory Mini Project</h1>
             <nav>
               <ul className='flex justify-center items-center gap-4'>
@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
               </ul>
             </nav>
           </header>
-          <main className='w-full flex flex-col justify-start items-center pt-20 px-12'>
+          <main className='w-full flex flex-col justify-start items-center pt-16 px-12'>
             {children}
           </main>
         </InventoryContextProvider>

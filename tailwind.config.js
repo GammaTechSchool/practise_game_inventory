@@ -10,6 +10,9 @@ module.exports = {
       backgroundImage: {
         'inventory-sprite': "url('../public/inventory_sprite.png')"
       },
+      boxShadow: {
+        'selected': '0 0 10px rgba(255, 255, 255, 0.5)',
+      }
     },
   },
   plugins: [],
