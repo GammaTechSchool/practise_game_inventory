@@ -35,7 +35,7 @@ export default function InventoryObject({ data, setDescription, equippedItems, s
   }
 
   return (
-    <div className={`relative w-[100px] h-[100px] flex justify-center items-center border ${equippedItems[data.category]?.name === data.name ? "border-[rgba(255, 255, 255, 0.5)] shadow-selected" : "border-slate-500"} cursor-pointer`} onClick={handleClick}>
+    <div className={`relative w-[100px] h-[100px] flex justify-center items-center border ${equippedItems[data.category]?.name === data.name ? "border-[rgba(255, 255, 255, 0.5)] shadow-selected" : "border-slate-500 shadow-object-cell"} cursor-pointer`} onClick={handleClick}>
 
       <Image
         src={data.icon}

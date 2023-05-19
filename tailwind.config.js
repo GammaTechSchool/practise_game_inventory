@@ -12,6 +12,7 @@ module.exports = {
       },
       boxShadow: {
         'selected': '0 0 10px rgba(255, 255, 255, 0.5)',
+        'object-cell': '0 0 5px rgba(0, 0, 0, 0.3)',
       }
     },
   },

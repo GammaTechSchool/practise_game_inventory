@@ -6,10 +6,14 @@ import Sword from "../assets/images/sword.svg"
 import Image from "next/image"
 
 
-export default function CategoryButton({ name, changeCategory }) {
+export default function CategoryButton({ selectedCategory, setSelectedCategory, name, changeCategory }) {
 
   const [icon, setIcon] = useState(null);
-  const [selected, setSelected] = useState("");
+
+  const handleClick = (name) => {
+    changeCategory(name);
+    setSelectedCategory(name);
+  }
 
   useEffect(() => {
     if (name === "weapons") {
@@ -22,7 +26,7 @@ export default function CategoryButton({ name, changeCategory }) {
   }, [name]);
 
   return (
-    <button onClick={() => changeCategory(name)} className={`p-2 rounded cursor-pointer ${selected && selected === name ? "bg-red-500":"bg-slate-600"}`}>
+    <button onClick={() => handleClick(name)} className={`p-2 rounded cursor-pointer ${selectedCategory === name ? "bg-slate-800" : "bg-slate-600"}`}>
       {icon && <Image src={icon} alt="" className="w-10 h-10" />}
     </button>
   )

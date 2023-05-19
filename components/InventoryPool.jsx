@@ -7,6 +7,8 @@ import { InventoryContext } from "@/context/InventoryContext";
 export default function InventoryPool({ items, setDescription }) {
 
     const [itemsToRender, setItemsToRender] = useState(items.weapons);
+    const [selectedCategory, setSelectedCategory] = useState("weapons");
+
     const {equippedItems, setEquippedItems} = useContext(InventoryContext);
 
     const changeCategory = (key) => {
@@ -17,7 +19,7 @@ export default function InventoryPool({ items, setDescription }) {
         <div className="w-1/2 max-w-[500px] flex flex-col justify-center items-center gap-8">
             <div className="w-full justify-center items-center flex gap-4">
                 {Object.keys(items).map((key, i) => {
-                    return <CategoryButton key={i} name={key} changeCategory={changeCategory} />
+                    return <CategoryButton key={i} selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} name={key} changeCategory={changeCategory} />
                 })}
             </div>
             <div className="w-full flex flex-wrap justify-center items-center gap-4">
