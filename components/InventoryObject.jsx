@@ -25,15 +25,11 @@ export default function InventoryObject({ data, setDescription }) {
     });
   }
 
-
-
-
-
   return (
     <>
 
       {
-        openModal[data?.name] ? <div className={`relative w-[100px] h-[100px] flex justify-center items-center border ${openModal[data.name].isFocused ? "border-[rgba(255, 255, 255, 0.5)] shadow-selected" : "border-slate-500 shadow-object-cell"} cursor-pointer`} onClick={
+        openModal[data?.name] ? <div className={`relative w-[100px] h-[100px] flex justify-center items-center border ${openModal[data.name].isFocused ? "border-slate-300 shadow-selected" : "border-slate-500 shadow-object-cell"} cursor-pointer ${equippedItems[data.category]?.name === data.name ? "bg-blue-400 border-slate-300" : "bg-transaparent"}`} onClick={
           () => {
             setOpenModal(prev => {
 
@@ -74,7 +70,7 @@ export default function InventoryObject({ data, setDescription }) {
             openModal[data.name].isActive && <EquipModal data={data}/>
           }
 
-        </div> : <div className={`relative w-[100px] h-[100px] flex justify-center items-center border border-slate-500 shadow-object-cell cursor-pointer`} >
+        </div> : <div className={`relative w-[100px] h-[100px] flex justify-center items-center border border-slate-500 bg-slate-800 shadow-object-cell cursor-pointer`} >
 
 
 

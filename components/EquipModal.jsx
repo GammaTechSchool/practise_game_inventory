@@ -61,18 +61,18 @@ const EquipModal = ({ data }) => {
 
 
   return (
-    <div className='absolute translate-x-[100px] translate-y-[30px] z-50  p-2 rounded-sm'>
-      <div onClick={handleClick} className="overflow-hidden flex text-xs white bg-[#292828] justify-center items-center w-[120px] h-[35px] border border-red-400 rounded-full">
+    <div className='absolute flex flex-col gap-4 bg-slate-800 translate-x-1/2 translate-y-1/2 z-50 p-4 border border-slate-600'>
+      <div onClick={handleClick} className="overflow-hidden flex px-6 py-2 text-lg bg-slate-800 justify-center items-center w-full border border-slate-700 hover:border-slate-300">
         {
           data.name == equippedItems[data.category]?.name ? <TextAnimated text={'Unequip'} /> : <TextAnimated text={'Equip'} />
         }
 
       </div>
-      <div onClick={handleThrow} className="overflow-hidden flex text-xs white bg-[#292828] justify-center items-center w-[120px] h-[35px] border border-red-400 rounded-full">
+      <div onClick={handleThrow} className="overflow-hidden flex px-4 py-2 text-lg bg-slate-800 justify-center items-center w-full border border-slate-700 hover:border-slate-300">
 
         <TextAnimated text={'Throw'} />
       </div>
-      <div onClick={closeModal} className="overflow-hidden flex text-xs white bg-[#292828] justify-center items-center w-[120px] h-[35px] border border-red-400 rounded-full">
+      <div onClick={closeModal} className="overflow-hidden flex px-4 py-2 text-lg bg-slate-800 justify-center items-center w-full border border-slate-700 hover:border-slate-300">
 
         <TextAnimated text={'Cancel'} />
       </div>
