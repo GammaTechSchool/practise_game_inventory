@@ -8,11 +8,12 @@ import { InventoryContext } from "@/context/InventoryContext";
 export default function InventoryObject({ data, setDescription }) {
   const { openModal, setOpenModal } = useContext(ModalContext)
   const { equippedItems } = useContext(InventoryContext)
-
+  
   const handleFirstClick = () => {
     setDescription(() => {
         return {
           name: data.name,
+          category : data.category,
           description: data.description,
           stats: {
             type: Object.keys(data.stats)[0],
