@@ -9,8 +9,7 @@ export default function InventoryObject({ data, setDescription }) {
   const { openModal, setOpenModal } = useContext(ModalContext)
   const { equippedItems } = useContext(InventoryContext)
   
-
-
+  
   const handleFirstClick = () => {
     setDescription(() => {
         return {
