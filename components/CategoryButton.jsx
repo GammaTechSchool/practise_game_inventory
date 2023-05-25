@@ -4,7 +4,6 @@ import Armor from "../assets/images/armor.svg"
 import Shield from "../assets/images/shield.svg"
 import Sword from "../assets/images/sword.svg"
 import Image from "next/image"
-import { fill } from "./InventoryPool"
 
 
 export default function CategoryButton({ selectedCategory, setSelectedCategory, name, changeCategory }) {
@@ -28,7 +27,7 @@ export default function CategoryButton({ selectedCategory, setSelectedCategory, 
 
   return (
     <button onClick={() => handleClick(name)} className={`p-2 rounded cursor-pointer ${selectedCategory === name ? "bg-slate-800" : "bg-slate-600"}`}>
-     { icon && <Image src={icon} alt="" className="w-10 h-10" /> }
+      {icon && <Image src={icon} alt="" className="w-10 h-10" />}
     </button>
   )
 }

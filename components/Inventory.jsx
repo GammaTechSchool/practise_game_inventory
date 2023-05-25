@@ -11,7 +11,7 @@ export default function Inventory({ items }) {
 
   return (
     <div className="w-full flex justify-center items-start gap-20">
-      <InventoryPool rawItems={items} setDescription={setDescription} />
+      <InventoryPool items={items} setDescription={setDescription} />
       <div className="w-1/2 flex flex-col justify-start items-center gap-8">
         <CharacterStats />
         <ObjectDescription description={description} />

@@ -1,9 +1,9 @@
 import Inventory from '@/components/Inventory'
-import itemsJs from "../assets/items/items.js";
+import items from "../assets/items/items.js";
 
 export default function InventoryPage() {
   
   return (
-      <Inventory items={itemsJs} />
+      <Inventory items={items} />
   )
 }

@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   env: {
-    PUBLIC_URL: "https://practise-game-inventory.vercel.app/",
+    PUBLIC_URL: "http://localhost:3001/"
   },
 
   images: {
@@ -9,7 +9,7 @@ const nextConfig = {
       {
         protocol: 'http',
         hostname: 'localhost',
-        port: '3004',
+        port: '3003',
         pathname: '/items/**',
       },
       {
