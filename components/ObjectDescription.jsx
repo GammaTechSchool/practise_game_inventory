@@ -14,8 +14,8 @@ export default function ObjectDescription({ description }) {
 
   const [compare, setCompare] = useState(1)
 
-  const {equippedItems} = useContext(InventoryContext)
-  
+  const { equippedItems } = useContext(InventoryContext)
+
   useEffect(() => {
 
     if (description.stats) {
@@ -27,22 +27,14 @@ export default function ObjectDescription({ description }) {
         setIcon(Armor);
       }
 
-      if(equippedItems[description.category]){
+      if (equippedItems[description.category]) {
         let equippedValue = equippedItems[description.category].stats.damage ||
-        equippedItems[description.category].stats.defense ||
-        equippedItems[description.category].stats.armor 
-        if(equippedValue < description.stats.value){
-          setCompare(0)
-        }else if(equippedValue < description.stats.value ){
-          setCompare(2)
-        }else { setCompare(1) }
+          equippedItems[description.category].stats.defense ||
+          equippedItems[description.category].stats.armor
+          setCompare(equippedValue - description.stats.value);
       }
-
     }
   }, [description]);
-
-
-
 
   return (
     <>
@@ -52,21 +44,21 @@ export default function ObjectDescription({ description }) {
           <h3 className="p-4 bg-slate-900 font-semibold text-xl">{description.name}</h3>
           <div className="flex gap-4 p-4 bg-slate-600">
             {icon && <Image src={icon.src} alt="" width={20} height={20} />}
-            <p className={`border  px-2 py-1 ${compare === 0 ? 'border-red-300' : compare == 2 && 'border-green-400'}`}>{description.stats.value}</p>
-            
-            
+            {
+              equippedItems[description.category] ?
+                <p className={`border  px-2 py-1 ${compare < 0 ? 'border-red-300' : compare > 0 ? 'border-green-400' : "border-slate-300"}`}>
+                  {
+                    equippedItems[description.category].stats.damage ||
+                    equippedItems[description.category].stats.defense ||
+                    equippedItems[description.category].stats.armor
+                  }</p>
+                :
+                <p className={`border px-2 py-1 ${compare < 0 ? 'border-red-300' : compare > 0 ? 'border-green-400' : "border-slate-300"}`}>{10}</p>
+            }
+
             <IconArrowRightShort />
 
-           {
-            equippedItems[description.category] ?
-             <p className={`border  px-2 py-1 ${compare === 0 ? 'border-red-300' : compare == 2 && 'border-green-400'}`}>
-              {
-              equippedItems[description.category].stats.damage ||
-              equippedItems[description.category].stats.defense ||
-              equippedItems[description.category].stats.armor 
-              }</p> :
-             <p className={`border  px-2 py-1 ${compare === 0 ? 'border-green-400' : compare == 2 && 'border-red-300'}`}>{10}</p>
-           }
+            <p className={`border px-2 py-1 ${compare > 0 ? 'border-red-300' : compare < 0 ? 'border-green-400' : "border-slate-300"}`}>{description.stats.value}</p>
           </div>
           <p className="p-4 pt-0 bg-slate-600">{description.description}</p>
         </div>
