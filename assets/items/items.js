@@ -2,7 +2,7 @@ import {randomUUID} from 'crypto'
 
 
 
-const rawItems = {
+const itemsJs = {
   weapons: [
     {
       name: "Tree Branch",
@@ -247,10 +247,10 @@ const rawItems = {
 };
 
 
-const items = Object.keys(rawItems).reduce((acc, e) => {
-    acc[e] = rawItems[e].map((e)=> ({...e, id : randomUUID()}))
-  return acc
-}, {})
-console.log('ITEMS');
-export default items
+// const rawItems = Object.keys(itemsJs).reduce((acc, e) => {
+//     acc[e] = itemsJs[e].map((e)=> ({...e, id : randomUUID()}))
+//   return acc
+// }, {})
+
+export default itemsJs
 

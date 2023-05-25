@@ -8,15 +8,21 @@ import { fill } from "@/app/functions/functions";
 
 export const ModalContext = createContext(null)
 
-export default function InventoryPool({ items, setDescription }) {
+export default function InventoryPool({ rawItems, setDescription }) {
 
+    const {items,setItems} = useContext(InventoryContext)
+    
     const [itemsToRender, setItemsToRender] = useState(fill(items.weapons));
     const [selectedCategory, setSelectedCategory] = useState("weapons");
     
-    const { equippedItems, setEquippedItems } = useContext(InventoryContext);
+    
     
     const changeCategory = (key) => {
-        setItemsToRender(fill(items[key]));
+        // setItemsToRender(fill(items[key]));
+        setItemsToRender( prev => {
+            return fill(items[key])
+        }
+             )
     }
     
     
@@ -35,6 +41,10 @@ export default function InventoryPool({ items, setDescription }) {
         setOpenModal(modalReference(itemsToRender))
     }, [itemsToRender])
 
+    useEffect(() => {
+        setItemsToRender(fill(items[selectedCategory]))
+    },[items])
+
    
     return (
         <div className="w-1/2 max-w-[500px] flex flex-col justify-center items-center gap-8">
@@ -43,7 +53,7 @@ export default function InventoryPool({ items, setDescription }) {
                     return <CategoryButton key={i} selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} name={key} changeCategory={changeCategory} />
                 })}
             </div>
-            <ModalContext.Provider value={{ openModal, setOpenModal }}>
+            <ModalContext.Provider value={{ openModal, setOpenModal, setItems }}>
                 <div className="w-full flex flex-wrap justify-center items-center gap-4">
                     {itemsToRender.map((item, i) => {
                         return <InventoryObject key={i} data={item} setDescription={setDescription} />

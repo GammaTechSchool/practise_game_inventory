@@ -31,8 +31,6 @@ export default function ObjectDescription({ description }) {
         let equippedValue = equippedItems[description.category].stats.damage ||
         equippedItems[description.category].stats.defense ||
         equippedItems[description.category].stats.armor 
-        console.log(equippedValue);
-
         if(equippedValue < description.stats.value){
           setCompare(0)
         }else if(equippedValue < description.stats.value ){
@@ -41,8 +39,6 @@ export default function ObjectDescription({ description }) {
       }
 
     }
-
-
   }, [description]);
 
 
