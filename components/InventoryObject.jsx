@@ -8,26 +8,23 @@ import { InventoryContext } from "@/context/InventoryContext";
 export default function InventoryObject({ data, setDescription }) {
   const { openModal, setOpenModal } = useContext(ModalContext)
   const { equippedItems } = useContext(InventoryContext)
-  
-
 
   const handleFirstClick = () => {
     setDescription(() => {
-        return {
-          name: data.name,
-          category : data.category,
-          description: data.description,
-          stats: {
-            type: Object.keys(data.stats)[0],
-            value: data.stats[Object.keys(data.stats)[0]]
-          }
+      return {
+        name: data.name,
+        category: data.category,
+        description: data.description,
+        stats: {
+          type: Object.keys(data.stats)[0],
+          value: data.stats[Object.keys(data.stats)[0]]
         }
+      }
     });
   }
 
   return (
     <>
-
       {
         openModal[data?.name] ? <div className={`relative w-[100px] h-[100px] flex justify-center items-center border ${openModal[data.name].isFocused ? "border-slate-300 shadow-selected" : "border-slate-500 shadow-object-cell"} cursor-pointer ${equippedItems[data.category]?.name === data.name ? "bg-blue-400 border-slate-300" : "bg-transaparent"}`} onClick={
           () => {
@@ -52,37 +49,24 @@ export default function InventoryObject({ data, setDescription }) {
           }
         }
         >
-
           <Image
             src={data.icon}
             width={100}
             height={100}
             alt="Alt"
           />
-          <div className="absolute  bottom-0  grid place-content-center italic right-2 translate-x-2 translate-y-2 w-9 h-6 border bg-slate-700 border-slate-500">
+          <div className="absolute bottom-0 right-[0px] text-center italic right-2 translate-x-2 translate-y-2 w-9 h-6 border bg-slate-700 border-slate-500">
             {data.stats.damage || data.stats.defense || data.stats.armor}
           </div>
-
           {
             openModal[data.name].isFocused && <SelectedAnimation />
           }
           {
-            openModal[data.name].isActive && <EquipModal data={data}/>
+            openModal[data.name].isActive && <EquipModal data={data} />
           }
-
         </div> : <div className={`relative w-[100px] h-[100px] flex justify-center items-center border border-slate-500 bg-slate-800 shadow-object-cell cursor-pointer`} >
-
-
-
         </div>
       }
-
-
-
-
-
     </>
   )
 }
-
-
