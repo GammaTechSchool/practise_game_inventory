@@ -32,6 +32,8 @@ export default function ObjectDescription({ description }) {
           equippedItems[description.category].stats.defense ||
           equippedItems[description.category].stats.armor
           setCompare(equippedValue - description.stats.value);
+      } else {
+        setCompare(10 - description.stats.value);
       }
     }
   }, [description]);
