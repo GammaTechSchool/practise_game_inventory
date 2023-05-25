@@ -1,14 +1,16 @@
 "use client"
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import Armor from "../assets/images/armor.svg"
 import Shield from "../assets/images/shield.svg"
 import Sword from "../assets/images/sword.svg"
 import Image from "next/image"
+import { InventoryContext } from "@/context/InventoryContext"
 
 export default function ObjectDescription({ description }) {
 
   const [icon, setIcon] = useState(null);
-
+  const {equippedItems} = useContext(InventoryContext)
+  
   useEffect(() => {
     if (description.stats) {
       if (description.stats.type === "damage") {
@@ -31,6 +33,10 @@ export default function ObjectDescription({ description }) {
           <div className="flex gap-4 p-4 bg-slate-600">
             {icon && <Image src={icon.src} alt="" width={20} height={20} />}
             <p className="border px-2 py-1">{description.stats.value}</p>
+
+            {
+          
+            }
           </div>
           <p className="p-4 pt-0 bg-slate-600">{description.description}</p>
         </div>

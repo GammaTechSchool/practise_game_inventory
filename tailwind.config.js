@@ -7,6 +7,16 @@ module.exports = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        'expanding' : {
+          '0%' : { transform : 'scale(0.95)'},
+          '50%' : { transform : 'scale(1.1)'},
+          '100%' : { transform : 'scale(0.95)'},
+        }
+      },
+      animation:{
+        'expanding' : 'expanding 1s linear infinite'
+      },
       backgroundImage: {
         'inventory-sprite': "url('../public/inventory_sprite.png')"
       },
