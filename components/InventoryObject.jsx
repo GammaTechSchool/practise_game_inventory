@@ -1,49 +1,72 @@
 import Image from "next/image"
+import { useContext, useState } from "react";
+import EquipModal from "./EquipModal";
+import { ModalContext } from "./InventoryPool";
+import SelectedAnimation from "./SelectedAnimation";
+import { InventoryContext } from "@/context/InventoryContext";
 
-export default function InventoryObject({ data, setDescription, equippedItems, setEquippedItems }) {
+export default function InventoryObject({ data, setDescription }) {
+  const { openModal, setOpenModal } = useContext(ModalContext)
+  const { equippedItems } = useContext(InventoryContext)
 
-
-  const handleClick = () => {
-
-    setEquippedItems(prev => {
-      if (prev[data.category]?.name === data.name) {
-        const holdPrev = { ...prev }
-        delete holdPrev[data.category];
-        return holdPrev
-      } else {
-        return {
-          ...prev,
-          [data.category]: data
-        }
-      }
-    });
-
-    setDescription(prev => {
-      if (equippedItems[data.category]?.name === data.name) {
-        return {}
-      } else {
-        return {
-          name: data.name,
-          description: data.description,
-          stats: {
-            type: Object.keys(data.stats)[0],
-            value: data.stats[Object.keys(data.stats)[0]]
-          }
+  const handleFirstClick = () => {
+    setDescription(() => {
+      return {
+        name: data.name,
+        category: data.category,
+        description: data.description,
+        stats: {
+          type: Object.keys(data.stats)[0],
+          value: data.stats[Object.keys(data.stats)[0]]
         }
       }
     });
   }
 
   return (
-    <div className={`relative w-[100px] h-[100px] flex justify-center items-center border ${equippedItems[data.category]?.name === data.name ? "border-[rgba(255, 255, 255, 0.5)] shadow-selected" : "border-slate-500 shadow-object-cell"} cursor-pointer`} onClick={handleClick}>
+    <>
+      {
+        openModal[data?.name] ? <div className={`relative w-[100px] h-[100px] flex justify-center items-center border ${openModal[data.name].isFocused ? "border-slate-300 shadow-selected" : "border-slate-500 shadow-object-cell"} cursor-pointer ${equippedItems[data.category]?.name === data.name ? "bg-blue-400 border-slate-300" : "bg-transaparent"}`} onClick={
+          () => {
+            setOpenModal(prev => {
 
-      <Image
-        src={data.icon}
-        width={100}
-        height={100}
-        alt="Alt"
-      />
-
-    </div>
+              const holdPrev = { ...prev }
+              if (holdPrev[data.name].isFocused) {
+                holdPrev[data.name].isActive = true
+              } else {
+                for (let key in holdPrev) {
+                  if (key === data.name) {
+                    holdPrev[key].isFocused = true
+                    handleFirstClick()
+                  } else {
+                    holdPrev[key].isFocused = false;
+                    holdPrev[key].isActive = false;
+                  }
+                }
+              }
+              return holdPrev
+            })
+          }
+        }
+        >
+          <Image
+            src={data.icon}
+            width={100}
+            height={100}
+            alt="Alt"
+          />
+          <div className="absolute bottom-0 right-[0px] text-center italic right-2 translate-x-2 translate-y-2 w-9 h-6 border bg-slate-700 border-slate-500">
+            {data.stats.damage || data.stats.defense || data.stats.armor}
+          </div>
+          {
+            openModal[data.name].isFocused && <SelectedAnimation />
+          }
+          {
+            openModal[data.name].isActive && <EquipModal data={data} />
+          }
+        </div> : <div className={`relative w-[100px] h-[100px] flex justify-center items-center border border-slate-500 bg-slate-800 shadow-object-cell cursor-pointer`} >
+        </div>
+      }
+    </>
   )
 }
