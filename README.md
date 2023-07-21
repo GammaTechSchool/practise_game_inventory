@@ -1,34 +1,44 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+![Logo de GammaTech School](./assets/images/Logo_Yellow.png)
 
-## Getting Started
+# Game Inventory
 
-First, run the development server:
+## Introducción
+Este proyecto está pensado para trabajar todo lo aprendido de React hasta ahora: hooks, router, context, etc.
+La idea es crear una aplicación que simule la interfaz del inventario de un videojuego de rol. En concreto, este proyecto está inspirado en  _The Legend of Zelda: Breath of the Wild_. Para realizar la tarea, tenéis a vuestra disposición [esta API](https://practise-game-inventory.vercel.app/api/items), donde encontraréis los artículos del inventario (nombre, stats, imágenes, etc.), y [este ejemplo](https://practise-game-inventory.vercel.app), para que os sirva de guía.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+![](https://media.giphy.com/media/g3ZlHx1iqhCOCcY3p2/giphy.gif)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## API
+La API es sencilla:
+- `/items`: devuelve la lista completa de items, separados en `weapons`, `shields` y `armor`.
+- `/items/{weapon | shield | armor}`: devuelve los items de la categoría especificada.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Instrucciones
+Siguiendo el ejemplo, la aplicación debe realizar, al menos, las siguientes tareas:
+- Ruta `/`:
+	- Mostrar los objetos del inventario, separados por categoría (weapon, shield y armor).
+	- Mostrar un esquema de los objetos equipados.
+	- Equipar y desequipar objetos.
+	- Mostrar descripciones de los objetos según se equipen.
+- Ruta `/character`:
+	- Mostrar un esquema de los objetos equipados (igual que en la página de inventario).
+	- Mostrar un resumen de los stats del jugador (damage, defense, armor, etc.) que tengan en cuenta los puntos aportados por los objetos equipados.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Inventario
+Los objetos de la cuadrícula del inventario deben quedar señalados cuando se equipen.
 
-## Learn More
+### Descripciones
+Las descripciones de los objetos, que aparecerán debajo del esquema con los objetos equipados, deberán mostrar:
+- Nombre del objeto.
+- Puntos de daño/defensa/armadura.
+- Comparación con los puntos de daño/defensa/armadura del objeto equipado.
+- Texto con la descripción del objeto.
 
-To learn more about Next.js, take a look at the following resources:
+### Página de personaje
+La página de personaje, que estará en la ruta `/character`, mostrará:
+- El esquema con los objetos equipados.
+- Un resumen de los stats del personaje:
+	- Todos los stats tienen, por defecto, `10` puntos como mínimo. 
+	- A ellos habrá que sumarles los puntos de los objetos equipados.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+![](https://media.giphy.com/media/RHEGP4TpkhrQTFCZE4/giphy.gif)
